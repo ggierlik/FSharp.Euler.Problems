@@ -2,7 +2,6 @@
 //http://projecteuler.net/problem=14
 
 open System
-open System.Diagnostics
 
 let collatzSeq n =
     Seq.unfold (fun i ->
@@ -15,27 +14,17 @@ let collatzSeq n =
     ) (n)
 
 let collatzSeqLength n =
-    let rec calc i =
+    let rec calc i acc =
         match i with
-        | 1L -> 1
-        | i when i%2L = 0L -> (calc (i/2L)) + 1
-        | i when i%2L = 1L -> (calc (3L*i+1L)) + 1
+        | 1L -> 1+acc
+        | i when i%2L = 0L -> calc (i/2L) (acc+1)
+        | i when i%2L = 1L -> calc (3L*i+1L) (acc+1)
         | _ -> failwith (sprintf "Wrong value %d" i)
-    calc (int64 n)
+    calc (int64 n) 0
 
-let ns = [999999..-1..1]
+//printfn "collatzSeqLen %f" t1.Elapsed.TotalMilliseconds
 
-let t1 = Stopwatch.StartNew()
-let ns1 = [for i in ns do yield (i, collatzSeqLength i)]
-t1.Stop()
-
-printfn "collatzSeqLen %f" t1.Elapsed.TotalMilliseconds
-
-let t2 = Stopwatch.StartNew()
-let ns2 = [for i in ns do yield (i, (collatzSeq (int64 i)) |> Seq.length)]
-t2.Stop()
-
-printfn "collatzSeq %f" t2.Elapsed.TotalMilliseconds
+//printfn "collatzSeq %f" t2.Elapsed.TotalMilliseconds
 
 let chooseMax acc elem =
     let (a, b) = acc
@@ -44,9 +33,21 @@ let chooseMax acc elem =
     if b > y then acc
     else elem
 
-let r1 = ns1 |> List.reduce chooseMax
-let r2 = ns2 |> List.reduce chooseMax
+let ns = [999999..-1..1]
 
-printfn "%A %A" r1 r2
+let solve1 = 
+    let ns1 = [for i in ns do yield (i, collatzSeqLength i)]
 
-(Console.ReadKey()) |> ignore
+    let rn = ns1 |> List.reduce chooseMax
+
+//    printfn "%A" rn
+    let (r, _) = rn
+    r
+
+let solve2 = 
+    let ns1 = [for i in ns do yield (i, (collatzSeq (int64 i)) |> Seq.length)]
+    let rn = ns1 |> List.reduce chooseMax
+
+//    printfn "%A" rn
+    let (r, _) = rn
+    r

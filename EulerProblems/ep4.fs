@@ -25,7 +25,7 @@ let numbers = [999 .. -1 .. 100] @ [1]
 
 let makePalindrome n = n * 1000 + makeMirror n
 
-printfn "palindrome %i %i" 345 (makePalindrome 345)
+//printfn "palindrome %i %i" 345 (makePalindrome 345)
 
 let isDivisible n d =
     match n % d with
@@ -47,8 +47,8 @@ let isGreatestPalindrome n =
 
     r <> 1
 
-let result = List.find (isGreatestPalindrome) numbers
+let solve = 
+    let result = List.find (isGreatestPalindrome) numbers
+    //printfn "%i" (makePalindrome result)
+    makePalindrome result
 
-printfn "%i" (makePalindrome result)
-
-ignore (Console.ReadKey(true))

@@ -1,7 +1,6 @@
 ﻿module ep12
 //http://projecteuler.net/problem=12
 
-open System
 open System.Numerics
 open Primes
 
@@ -10,6 +9,7 @@ let triangleNumber n =
 //    printfn "triangleNumber %6d = %d" n r
     r
 
+(*
 let countDivisors n =
 //    printfn "cd %d" n
     let rec count n c =
@@ -20,6 +20,7 @@ let countDivisors n =
     let r = count n n
     //printfn "countDivisors: %d %d" n r
     r
+*)
 
 let countDivisors1 n = 
     let rec count n d =
@@ -78,7 +79,6 @@ let tz =
     |> Seq.map (fun (i, i1, n, di, di1, dn, dii) -> (i, i1, n, di, di1, dn, dii, float dii / (float dn)))
 *)
 
-let ts = System.Diagnostics.Stopwatch.StartNew()
 (*
 let triangleNumbers = Seq.unfold (fun i -> Some ((i, triangleNumber i), (i+1UL))) (2UL)
 let tn = 
@@ -100,12 +100,12 @@ printfn "Time %fs" ts.Elapsed.TotalSeconds
 Time 141.720075s
 *)
 
-let tn1 = Seq.unfold (fun i -> Some ((i, triangleNumber i), (i+1UL))) (2UL)
-let tn2 = tn1 |> Seq.map (fun (i, n) -> (i, n, countDivisors1 n)) 
-let tn3 = tn2 |> Seq.filter (fun (i, n, d) -> d > 500) 
-let tn5 = tn3 |> Seq.take 1 |> Seq.toList
-printfn "%A" tn5
+let solve =
+    let tn1 = Seq.unfold (fun i -> Some ((i, triangleNumber i), (i+1UL))) (2UL)
+    let tn2 = tn1 |> Seq.map (fun (i, n) -> (i, n, countDivisors1 n)) 
+    let tn3 = tn2 |> Seq.filter (fun (i, n, d) -> d > 500) 
+    let tn5 = tn3 |> Seq.take 1 |> Seq.toList
+//    printfn "%A" tn5
+    let (_, r, _) = tn5.Head
 
-printfn "Time %fs" ts.Elapsed.TotalSeconds
-
-(Console.ReadKey()) |> ignore
+    r

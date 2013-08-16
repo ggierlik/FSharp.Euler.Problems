@@ -33,6 +33,8 @@ let find_max_product xs =
     
     product xs [1]
 
-printfn "Max product: %d" (digits |> find_max_product)
+let solve = 
+    let result = digits |> find_max_product
+//    printfn "Max product: %d" result
+    result
 
-(Console.ReadKey()) |> ignore
