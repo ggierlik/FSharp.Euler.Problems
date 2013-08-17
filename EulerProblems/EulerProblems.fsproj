@@ -55,6 +55,7 @@
     <Compile Include="ep9.fs" />
     <Compile Include="ep11.fs" />
     <Compile Include="ep12.fs" />
+    <Compile Include="ep13.fs" />
     <Compile Include="ep14.fs" />
     <Compile Include="EPSolutions.fs" />
   </ItemGroup>

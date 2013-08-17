@@ -12,6 +12,7 @@ open ep8
 open ep9
 open ep11
 open ep12 
+open ep13
 open ep14
 
 let ts = System.Diagnostics.Stopwatch.StartNew()
@@ -45,6 +46,8 @@ let ts = System.Diagnostics.Stopwatch.StartNew()
 //printfn "Time %fms" ts.Elapsed.TotalMilliseconds
 //ts.Reset()
 
-ep11.solve |> printfn "%d"
+//ep11.solve |> printfn "%d"
+
+ep13.solve |> printfn "%s"
 
 Console.ReadKey() |> ignore
