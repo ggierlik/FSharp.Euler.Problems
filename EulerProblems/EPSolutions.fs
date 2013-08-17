@@ -45,6 +45,6 @@ let ts = System.Diagnostics.Stopwatch.StartNew()
 //printfn "Time %fms" ts.Elapsed.TotalMilliseconds
 //ts.Reset()
 
-ep11.solve |> ignore
+ep11.solve |> printfn "%d"
 
 Console.ReadKey() |> ignore
