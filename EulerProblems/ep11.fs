@@ -1,4 +1,5 @@
 ﻿module ep11
+//http://projecteuler.net/problem=11
 
 open System
 open System.IO
