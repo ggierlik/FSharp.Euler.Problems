@@ -8,6 +8,6 @@ let solve n =
 
     let result = fibX |> Seq.takeWhile (fun (_, l) -> l < n) |> Seq.length |> (+) 1
 
-//    printfn "%A" result
+//    printfn "F(%d) = %A" n result
 
     result
