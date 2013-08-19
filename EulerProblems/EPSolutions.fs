@@ -14,6 +14,8 @@ open ep11
 open ep12 
 open ep13
 open ep14
+open ep20
+open ep25
 
 let ts = System.Diagnostics.Stopwatch.StartNew()
 
@@ -48,6 +50,8 @@ let ts = System.Diagnostics.Stopwatch.StartNew()
 
 //ep11.solve |> printfn "%d"
 
-ep13.solve |> printfn "%s"
+//ep13.solve |> printfn "%s"
+
+ep25.solve 1000 |> printfn "%A"
 
 Console.ReadKey() |> ignore
