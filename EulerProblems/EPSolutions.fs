@@ -38,7 +38,11 @@ let ts = System.Diagnostics.Stopwatch.StartNew()
 ////printfn "Time %fms" ts.Elapsed.TotalMilliseconds
 //ts.Reset()
 
+//ep11.solve |> printfn "%d"
+
 //ep12.solve |> printfn "%d"
+
+//ep13.solve |> printfn "%s"
 
 //ep14.solve1 |> printfn "%d"
 //printfn "Time %fms" ts.Elapsed.TotalMilliseconds
@@ -48,12 +52,10 @@ let ts = System.Diagnostics.Stopwatch.StartNew()
 //printfn "Time %fms" ts.Elapsed.TotalMilliseconds
 //ts.Reset()
 
-//ep11.solve |> printfn "%d"
+ep16.solve 1000 |> printfn "%d"
 
-//ep13.solve |> printfn "%s"
+//ep20.solve 100 |> printfn "%d"
 
-ep20.solve 100 |> printfn "%d"
-
-ep25.solve 1000 |> printfn "%A"
+//ep25.solve 1000 |> printfn "%A"
 
 Console.ReadKey() |> ignore
