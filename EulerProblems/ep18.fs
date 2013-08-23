@@ -21,9 +21,9 @@ let readToArray filePath =
                 |> Array.map(fun x -> (int x, 0)))
         |> Seq.toArray
 
-let solve =
-    let g = readToArray @"c:\Users\gg\Documents\Visual Studio 2010\Projects\FSharp.Euler.Problems\EulerProblems\ep18.in"
-    //let g = readToArray @"ep18.in"
+let solve filePath =
+    //let g = readToArray @"c:\Users\gg\Documents\Visual Studio 2010\Projects\FSharp.Euler.Problems\EulerProblems\ep18.in"
+    let g = readToArray filePath
 //    printfn "X: %d %A" g.Length g
     
     g.[0].[0] <- (fst g.[0].[0], fst g.[0].[0])

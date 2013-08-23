@@ -17,6 +17,8 @@ open ep14
 open ep20
 open ep25
 
+//#I "c:\Documents and Settings\gg\Documents\Visual Studio 2010\Projects\FSharp.Euler.Problems\EulerProblems\";;
+
 let ts = System.Diagnostics.Stopwatch.StartNew()
 
 //ep1.solve |> printfn "%d"
@@ -52,7 +54,10 @@ let ts = System.Diagnostics.Stopwatch.StartNew()
 //printfn "Time %fms" ts.Elapsed.TotalMilliseconds
 //ts.Reset()
 
-ep16.solve 1000 |> printfn "%d"
+//ep16.solve 1000 |> printfn "%d"
+
+ep18.solve @"ep18.in" |> printfn "%d"
+ep18.solve @"ep67.in" |> printfn "%d"
 
 //ep20.solve 100 |> printfn "%d"
 
