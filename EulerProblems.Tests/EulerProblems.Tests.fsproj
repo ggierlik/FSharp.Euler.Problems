@@ -5,13 +5,13 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{86099ab6-59cb-4ae5-bc88-a824b4966be6}</ProjectGuid>
+    <ProjectGuid>{79fb0706-db1c-493a-9550-46bbc90ac703}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ConsoleApplication1</RootNamespace>
-    <AssemblyName>FSharpEulerProblems</AssemblyName>
+    <RootNamespace>EulerProblems.Tests1</RootNamespace>
+    <AssemblyName>EulerProblems.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
-    <Name>EulerProblems</Name>
+    <Name>EulerProblems.Tests</Name>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,8 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
-    <DocumentationFile>bin\Debug\ConsoleApplication1.XML</DocumentationFile>
-    <StartWorkingDirectory>C:\Users\gg\Documents\Visual Studio 2010\Projects\FSharp.Euler.Problems\EulerProblems\</StartWorkingDirectory>
+    <DocumentationFile>bin\Debug\EulerProblems.Tests1.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>pdbonly</DebugType>
@@ -33,34 +32,14 @@
     <DefineConstants>TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
-    <DocumentationFile>bin\Release\ConsoleApplication1.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\EulerProblems.Tests1.XML</DocumentationFile>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath32)\FSharp\1.0\Microsoft.FSharp.Targets" Condition="!Exists('$(MSBuildBinPath)\Microsoft.Build.Tasks.v4.0.dll')" />
   <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft F#\v4.0\Microsoft.FSharp.Targets" Condition=" Exists('$(MSBuildBinPath)\Microsoft.Build.Tasks.v4.0.dll')" />
   <ItemGroup>
-    <Compile Include="Primes.fs" />
-    <Compile Include="Fib.fs" />
-    <Compile Include="ep1.fs" />
-    <Compile Include="ep2.fs" />
-    <Compile Include="ep3.fs" />
-    <Compile Include="ep4.fs" />
-    <Compile Include="ep5.fs" />
-    <Compile Include="ep6.fs" />
-    <Compile Include="ep7_10.fs" />
-    <Compile Include="ep8.fs" />
-    <Compile Include="ep9.fs" />
-    <Compile Include="ep11.fs" />
-    <Compile Include="ep12.fs" />
-    <Compile Include="ep13.fs" />
-    <Compile Include="ep14.fs" />
-    <Compile Include="ep15.fs" />
-    <Compile Include="ep16.fs" />
-    <Compile Include="ep17.fs" />
-    <Compile Include="ep18.fs" />
-    <Compile Include="ep20.fs" />
-    <Compile Include="ep25.fs" />
-    <Compile Include="EPSolutions.fs" />
     <None Include="packages.config" />
+    <None Include="app.config" />
+    <Compile Include="Program.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FsUnit.NUnit">
@@ -76,6 +55,13 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EulerProblems\EulerProblems.fsproj">
+      <Name>EulerProblems</Name>
+      <Project>{86099ab6-59cb-4ae5-bc88-a824b4966be6}</Project>
+      <Private>True</Private>
+    </ProjectReference>
   </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
 	     Other similar extension points exist, see Microsoft.Common.targets.
