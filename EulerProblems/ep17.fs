@@ -32,9 +32,8 @@ let to_teens number =
     | _ -> failwith "invalid value"
 
 let to_tens number =
-    match number / 10 with
-    | 0 -> to_unity number
-    | 1 -> to_teens number
+    match number with
+    | 1 -> "ten"
     | 2 -> "twenty"
     | 3 -> "thirty"
     | 4 -> "forty"
@@ -49,14 +48,19 @@ let to_hunders number =
     ""
 
 let to_text number =
-    match number with
-    | 1 -> "one"
-    | 10 -> "ten"
-    | 11 -> "eleven"
-    | 12 -> "twelve"
-    | 15 -> "fifteen"
-    | 115 -> "one hundred and fifteen"
-    | 342 -> "three hundred and forty two"
-    | 1000 -> "one thousand"
-    | _ -> "xxx"
+    match (number / 10, number % 10) with
+    | (0, unity) -> to_unity unity
+    | (1, _) -> to_teens number
+    | (tens, 0) -> to_tens tens
+    | (tens, unity) -> to_tens tens + "-" + to_unity unity
+
+//    | 1 -> "one"
+//    | 10 -> "ten"
+//    | 11 -> "eleven"
+//    | 12 -> "twelve"
+//    | 15 -> "fifteen"
+//    | 115 -> "one hundred and fifteen"
+//    | 342 -> "three hundred and forty two"
+//    | 1000 -> "one thousand"
+//    | _ -> "xxx"
 
