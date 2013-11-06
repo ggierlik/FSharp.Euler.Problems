@@ -9,8 +9,8 @@ max triplet is about (332, 333, 335)
 let aas = [1..333]
 
 let triples = [for a in aas do 
-    for b in [a+1 .. 500] do 
-        yield (a, b , 1000 - a - b)]
+                for b in [a+1 .. 500] do 
+                    yield (a, b , 1000 - a - b)]
 
 //printfn "%d" (List.length triples)
 
