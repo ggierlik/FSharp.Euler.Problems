@@ -1,21 +1,6 @@
 ﻿module EPSolutions
 
 open System
-open ep1
-open ep2
-open ep3
-open ep4
-open ep5
-open ep6
-open ep7_10
-open ep8
-open ep9
-open ep11
-open ep12 
-open ep13
-open ep14
-open ep20
-open ep25
 
 //#I "c:\Documents and Settings\gg\Documents\Visual Studio 2010\Projects\FSharp.Euler.Problems\EulerProblems\";;
 
@@ -56,11 +41,13 @@ let ts = System.Diagnostics.Stopwatch.StartNew()
 
 //ep16.solve 1000 |> printfn "%d"
 
-ep18.solve @"ep18.in" |> printfn "%d"
-ep18.solve @"ep67.in" |> printfn "%d"
+//ep18.solve @"ep18.in" |> printfn "%d"
+//ep18.solve @"ep67.in" |> printfn "%d"
 
 //ep20.solve 100 |> printfn "%d"
-
+//
 //ep25.solve 1000 |> printfn "%A"
+
+ep15.solve 20I |> printfn "%A"
 
 Console.ReadKey() |> ignore
