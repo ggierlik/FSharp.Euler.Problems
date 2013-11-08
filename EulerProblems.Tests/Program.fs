@@ -24,18 +24,31 @@ let ``Test to_text for teens`` () =
 
 [<Test>]
 let ``Test to_text for tens`` () =
-    to_tens(1) |> should equal "ten"
-    to_tens(2) |> should equal "twenty"
-    to_tens(3) |> should equal "thirty"
-    to_tens(4) |> should equal "forty"
-    to_tens(5) |> should equal "fifty"
+    to_tens(1) |> should equal "one"
+    to_tens(9) |> should equal "nine"
+    to_tens(10) |> should equal "ten"
+    to_tens(11) |> should equal "eleven"
+    to_tens(21) |> should equal "twenty-one"
+    to_tens(13) |> should equal "thirteen"
+    to_tens(30) |> should equal "thirty"
+    to_tens(40) |> should equal "forty"
+    to_tens(55) |> should equal "fifty-five"
     (fun () -> to_teens(100) |> ignore) |> should throw typeof<System.Exception>
 
 [<Test>]
 let ``Test to_text for hunders`` () =
-    to_hunders(1) |> should equal "one hundred"
-    to_hunders(3) |> should equal "three hundred"
-    to_hunders(6) |> should equal "six hundred"
+    to_hunders(7) |> should equal "seven"
+    to_hunders(10) |> should equal "ten"
+    to_hunders(11) |> should equal "eleven"
+    to_hunders(21) |> should equal "twenty-one"
+    to_hunders(30) |> should equal "thirty"
+    to_hunders(67) |> should equal "sixty-seven"
+    to_hunders(100) |> should equal "one hundred"
+    to_hunders(300) |> should equal "three hundred"
+    to_hunders(600) |> should equal "six hundred"
+    to_hunders(342) |> should equal "three hundred and forty-two"
+    to_hunders(115) |> should equal "one hundred and fifteen"
+    to_hunders 603 |> should equal "six hundred and three"
 
 [<Test>]
 let ``Test to_text for numbers`` () =
