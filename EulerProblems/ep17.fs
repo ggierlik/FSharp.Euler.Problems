@@ -63,3 +63,15 @@ let to_hunders number =
 let to_text number =
     if number = 1000 then "one thousand"
     else to_hunders number
+
+let count_letters (s : string) =
+//    s |> Seq.filter (fun c -> System.Char.IsWhiteSpace(c) |> not) 
+    s |> Seq.filter (fun c -> System.Char.IsLetter(c)) |> Seq.length
+
+let solve n = 
+    let numbers = [1..n]
+
+    numbers 
+        |> List.map (fun n -> to_text n) 
+        |> List.map (fun s -> count_letters s)
+        |> List.reduce (+)

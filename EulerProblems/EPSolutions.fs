@@ -48,6 +48,8 @@ let ts = System.Diagnostics.Stopwatch.StartNew()
 //
 //ep25.solve 1000 |> printfn "%A"
 
-ep15.solve 20I |> printfn "%A"
+//ep15.solve 20I |> printfn "%A"
+
+ep17.solve 1000 |> printfn "%d"
 
 Console.ReadKey() |> ignore

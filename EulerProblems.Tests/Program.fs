@@ -71,3 +71,13 @@ let ``Test to_text for numbers`` () =
     to_text(603) |> should equal "six hundred and three"
     to_text(1000) |> should equal "one thousand"
 
+[<Test>]
+let ``Test for count_letters`` () =
+    "" |> count_letters |> should equal 0
+    "a" |> count_letters |> should equal 1
+    "a b" |> count_letters |> should equal 2
+    "c-d" |> count_letters |> should equal 2
+    "123" |> count_letters |> should equal 0
+    "one, two, three, four, five" |> count_letters |> should equal 19
+    "three hundred and forty-two" |> count_letters |> should equal 23
+    "one hundred and fifteen" |> count_letters |> should equal 20
