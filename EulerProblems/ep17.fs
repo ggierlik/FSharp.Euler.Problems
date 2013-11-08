@@ -15,7 +15,7 @@ let to_unity number =
     | 7 -> "seven"
     | 8 -> "eight"
     | 9 -> "nine"
-    | _ -> failwith "invalid value"
+    | _ -> failwithf "invalid unity value %d" number
 
 let to_teens number =
     match number with
@@ -29,7 +29,7 @@ let to_teens number =
     | 17 -> "seventeen"
     | 18 -> "eighteen"
     | 19 -> "nineteen"
-    | _ -> failwith "invalid value"
+    | _ -> failwithf "invalid teens value %d" number
 
 let to_tens number =
     match number with
@@ -42,25 +42,21 @@ let to_tens number =
     | 7 -> "seventy"
     | 8 -> "eighty"
     | 9 -> "ninety"
-    | _ -> failwith "invalid value"
+    | _ -> failwithf "invalid tens value %d" number
 
 let to_hunders number =
-    ""
+    to_unity number + " hundred"
 
 let to_text number =
-    match (number / 10, number % 10) with
-    | (0, unity) -> to_unity unity
-    | (1, _) -> to_teens number
-    | (tens, 0) -> to_tens tens
-    | (tens, unity) -> to_tens tens + "-" + to_unity unity
-
-//    | 1 -> "one"
-//    | 10 -> "ten"
-//    | 11 -> "eleven"
-//    | 12 -> "twelve"
-//    | 15 -> "fifteen"
-//    | 115 -> "one hundred and fifteen"
-//    | 342 -> "three hundred and forty two"
-//    | 1000 -> "one thousand"
-//    | _ -> "xxx"
-
+    if number = 1000 then "one thousand"
+    else
+        match (number / 100, number / 10 % 10, number % 10) with
+        | (0, 0, unity) -> to_unity unity
+        | (0, 1, _) -> to_teens number
+        | (0, tens, 0) -> to_tens tens
+        | (0, tens, unity) -> to_tens tens + "-" + to_unity unity
+        | (hunds, 0, 0) -> to_hunders hunds
+        | (hunds, 0, unity) -> to_hunders hunds + " and " + to_unity unity
+        | (hunds, 1, _) -> to_hunders hunds + " and " + to_teens (number % 100)
+        | (hunds, tens, 0) -> to_hunders hunds + " and " + to_tens tens
+        | (hunds, tens, unity) -> to_hunders hunds + " and " + to_tens tens + "-" + to_unity unity

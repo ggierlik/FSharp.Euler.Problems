@@ -34,6 +34,8 @@ let ``Test to_text for tens`` () =
 [<Test>]
 let ``Test to_text for hunders`` () =
     to_hunders(1) |> should equal "one hundred"
+    to_hunders(3) |> should equal "three hundred"
+    to_hunders(6) |> should equal "six hundred"
 
 [<Test>]
 let ``Test to_text for numbers`` () =
@@ -50,7 +52,9 @@ let ``Test to_text for numbers`` () =
     to_text(55) |> should equal "fifty-five"
     to_text(57) |> should equal "fifty-seven"
     to_text(99) |> should equal "ninety-nine"
-//    to_text(342) |> should equal "three hundred and forty two"
-//    to_text(115) |> should equal "one hundred and fifteen"
-//    to_text(1000) |> should equal "one thousand"
+    to_text(342) |> should equal "three hundred and forty-two"
+    to_text(115) |> should equal "one hundred and fifteen"
+    to_text(400) |> should equal "four hundred"
+    to_text(603) |> should equal "six hundred and three"
+    to_text(1000) |> should equal "one thousand"
 
