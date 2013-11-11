@@ -39,7 +39,8 @@
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="app.config" />
-    <Compile Include="Program.fs" />
+    <Compile Include="ep17.fs" />
+    <Compile Include="ep19.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FsUnit.NUnit">

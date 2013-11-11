@@ -1,4 +1,4 @@
-﻿module Tests
+﻿module ep17
 
 open ep17
 open NUnit.Framework
