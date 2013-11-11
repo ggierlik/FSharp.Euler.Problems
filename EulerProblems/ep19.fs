@@ -38,9 +38,24 @@ let solve =
 
     weeks_total - weeks_1900
 
-(*
-TODO
- * solve correct problem :)
- * use .NET Datetime and DayOfWeek
- * try without .NET support
-*)
+let get_months start_year end_year = 
+    let days = Seq.unfold(fun (dte : System.DateTime) ->
+        if dte.Year > end_year then None
+        else
+            let y, m =
+                if dte.Month = 12 then
+                    dte.Year+1, 1
+                else
+                    dte.Year, dte.Month+1
+
+            let new_date = new System.DateTime(y, m, 1)
+            Some(new_date, new_date)) (new System.DateTime(start_year, 1, 1))
+
+    days
+
+let solve_1 () =
+    get_months 1901 2000
+        |> Seq.map (fun dte -> dte.DayOfWeek)
+        |> Seq.filter (fun dow -> dow = System.DayOfWeek.Sunday)
+        |> Seq.length
+
