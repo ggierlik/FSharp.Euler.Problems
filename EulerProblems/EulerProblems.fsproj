@@ -59,6 +59,8 @@
     <Compile Include="ep18.fs" />
     <Compile Include="ep19.fs" />
     <Compile Include="ep20.fs" />
+    <Compile Include="ep21.fs" />
+    <Compile Include="ep22.fs" />
     <Compile Include="ep25.fs" />
     <Compile Include="EPSolutions.fs" />
     <None Include="packages.config" />

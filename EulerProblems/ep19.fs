@@ -29,7 +29,7 @@ let get_years first_year last_year =
 let get_num_of_weeks days =
     days / 7
 
-let solve =
+let solve () =
     let years = get_years 1900 2000
     let y1900 = get_year_length 1900
     
