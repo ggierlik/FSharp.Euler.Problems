@@ -5,9 +5,28 @@
 d(n) = s
 d(s) = n
 *)
-let divisors n =
+
+(*
+31626
+Time 4.269296s
+*)
+let divisors_old n =
     seq { for i in 1..n/2 do if n % i = 0 then yield i}
-            
+         
+(*
+31626
+Time 0.488435s
+*)
+let divisors n =
+    let bf = n |> float |> sqrt
+    let bound = (bf |> ceil |> int)
+
+    seq { for i in 1..bound do 
+            if n % i = 0 then 
+                yield i
+                if i <> 1 && i*i <> n then yield n/i
+        }
+           
 let d n =
     divisors n |> Seq.sum
 
