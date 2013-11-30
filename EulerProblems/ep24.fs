@@ -57,4 +57,3 @@ let next_perm perm =
     let g = get_first_greater tail e
 
     perm
-            
