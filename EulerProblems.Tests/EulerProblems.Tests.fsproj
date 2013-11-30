@@ -41,6 +41,7 @@
     <None Include="app.config" />
     <Compile Include="ep17.fs" />
     <Compile Include="ep19.fs" />
+    <Compile Include="ep24.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FsUnit.NUnit">
