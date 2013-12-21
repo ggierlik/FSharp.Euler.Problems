@@ -39,28 +39,33 @@ let ts = System.Diagnostics.Stopwatch.StartNew()
 //printfn "Time %fms" ts.Elapsed.TotalMilliseconds
 //ts.Reset()
 
+//ep15.solve 20I |> printfn "%A"
+
 //ep16.solve 1000 |> printfn "%d"
+
+//ep17.solve 1000 |> printfn "%d"
 
 //ep18.solve @"ep18.in" |> printfn "%d"
 //ep18.solve @"ep67.in" |> printfn "%d"
 
-//ep20.solve 100 |> printfn "%d"
-//
-//ep25.solve 1000 |> printfn "%A"
-
-//ep15.solve 20I |> printfn "%A"
-
-//ep17.solve 1000 |> printfn "%d"
-
 //ep19.solve_1 () |> printfn "%d"
 
+//ep20.solve 100 |> printfn "%d"
+
 //ep21.solve () |> printfn "%d"
+
 //ep22.solve () |> printfn "%d"
 
 //ep23.solve () |> printfn "%d"
 
 //ep24.solve 1000000 [0..9] |> printfn "%s"
+
+//ep25.solve 1000 |> printfn "%A"
+
 ep27.solve () |> printfn "%d"
+
+//------------------------------------------
+
 printfn "Time %fs" ts.Elapsed.TotalSeconds
 ts.Reset()
 
