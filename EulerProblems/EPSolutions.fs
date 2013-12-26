@@ -64,7 +64,9 @@ let ts = System.Diagnostics.Stopwatch.StartNew()
 
 //ep27.solve () |> printfn "%d"
 
-ep29.solve |> printfn "%d"
+//ep29.solve |> printfn "%d"
+
+ep30.solve 5 |> printfn "%d"
 
 //------------------------------------------
 
