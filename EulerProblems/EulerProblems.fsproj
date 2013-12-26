@@ -65,6 +65,7 @@
     <Compile Include="ep24.fs" />
     <Compile Include="ep25.fs" />
     <Compile Include="ep27.fs" />
+    <Compile Include="ep29.fs" />
     <Compile Include="EPSolutions.fs" />
     <None Include="packages.config" />
   </ItemGroup>
