@@ -13,15 +13,15 @@ let coinsSeq = coins |> List.map (fun i -> getInfSeq i)
 
 let solve total =
     let rec calc acc sum coins =
-        printfn "%d %d" acc
-
         if List.isEmpty coins then acc
         else
-            let m = coins |> List.head |> Seq.head
+            let m = coins |> List.head
 
             let new_sum = sum + m
-            if new_sum = total then acc+1
-            else if new_sum < total then acc + calc acc (sum+m) coins
-            else acc + calc acc sum (coins |> List.tail)
+            printfn "%d %d %d %d %A" acc sum m new_sum coins
 
-    calc 0 0 coinsSeq
+            if new_sum = total then calc (acc+1) (sum-m) (coins |> List.tail)
+            else if new_sum < total then calc acc new_sum coins
+            else calc acc (sum-m) (coins |> List.tail)
+
+    calc 0 0 coins
