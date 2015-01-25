@@ -70,10 +70,12 @@ let ts = System.Diagnostics.Stopwatch.StartNew()
 
 //ep30.solve 5 |> printfn "%d"
 
-ep31.solve 200 |> printfn "%d"
+//ep31.solve 200 |> printfn "%d"
 
 //ep32.solve |> printfn "%d"
 //------------------------------------------
+
+ep34.solve |> printfn "%d"
 
 printfn "Time %fs" ts.Elapsed.TotalSeconds
 ts.Reset()
