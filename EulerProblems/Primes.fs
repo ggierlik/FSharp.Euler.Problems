@@ -21,7 +21,6 @@ let is_prime n =
 
         check n 3UL q
 
-
 let rec get_next_prime n =
     //printfn "%d" n
     match is_prime n with
