@@ -87,6 +87,7 @@
     <Compile Include="ep31.fs" />
     <Compile Include="ep32.fs" />
     <Compile Include="ep34.fs" />
+    <Compile Include="ep35.fs" />
     <Compile Include="EPSolutions.fs" />
     <None Include="packages.config" />
   </ItemGroup>
