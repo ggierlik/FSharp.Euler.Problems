@@ -76,7 +76,9 @@ let ts = System.Diagnostics.Stopwatch.StartNew()
 
 //ep34.solve |> printfn "%d"
 
-ep35.solve 1000000 |> printfn "%d"
+//ep35.solve 1000000 |> printfn "%d"
+
+ep36.solve 999999 |> printfn "%d"
 
 printfn "Time %fs" ts.Elapsed.TotalSeconds
 ts.Reset()
