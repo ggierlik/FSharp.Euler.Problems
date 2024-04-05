@@ -3,9 +3,13 @@
 let is_prime n =
     if n = 1UL then
         false
-    elif n = 2UL then
+    elif (n = 2UL || n = 3UL || n = 5UL) then
         true
     elif n % 2UL = 0UL then
+        false
+    elif n % 3UL = 0UL then
+        false
+    elif n % 5UL = 0UL then
         false
     else
         let rec check n d q =
@@ -16,7 +20,6 @@ let is_prime n =
                 | 0UL -> false
                 | _ -> check n (d+2UL) q
 
-        //let q = int (ceil (sqrt (float n)))
         let q = float n |> sqrt |> ceil |> uint64
 
         check n 3UL q
@@ -41,7 +44,7 @@ let get_factors n =
         elif is_prime n then
             [n]
         else
-            let d = primes |> Seq.nth i
+            let d = primes |> Seq.item i
             //printfn "%d %d" n d
 
             match n % d with
@@ -49,5 +52,4 @@ let get_factors n =
             | _ -> factors n (i+1)
 
     factors n 0 |> List.sort
-
 
