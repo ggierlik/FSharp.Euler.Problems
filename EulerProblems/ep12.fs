@@ -29,7 +29,7 @@ let countDivisors1 n =
         elif is_prime n then
             [n]
         else
-            let p = primes |> Seq.nth d |> uint64
+            let p = primes |> Seq.item d |> uint64
             if n % p = 0UL then p :: (count (n/p) d)
             else (count n (d+1))
 
